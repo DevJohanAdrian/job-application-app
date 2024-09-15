@@ -14,7 +14,7 @@ namespace Application_jobs.Services
                    Id = 1,
                    Description = "Sent",
                    Code= "C01"
-                 }, 
+                 },
                  new ApplicationStatus()
                  {
                      Id = 2,
@@ -34,7 +34,7 @@ namespace Application_jobs.Services
                      Code= "C04"
                  }
 
-            }
+            };
         }
     }
 }
