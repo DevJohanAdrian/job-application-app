@@ -7,11 +7,13 @@ using Microsoft.AspNetCore.Mvc;
 namespace Application_jobs.Controllers
 {
     [Route("api/[controller]")]
+    [ApiController]
     public class CompayController : ControllerBase // sin soporte a view
     {
       
         [HttpGet]
-        public ActionResult<IEnumerable<Company>> GetCompanies()
+        [Route("GetCompanies")]
+        public ActionResult<IEnumerable<CompanyDTO>> GetCompanies()
         {
             return Ok(CompanyDataStore.Data.Companies);
         }
