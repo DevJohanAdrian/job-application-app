@@ -1,7 +1,5 @@
 ﻿using Application_jobs.Models;
 using Microsoft.EntityFrameworkCore;
-using System.ComponentModel.Design;
-using System.Security.Cryptography.X509Certificates;
 namespace Application_jobs.Context
 {
     public class AppDbContext: DbContext // Viene de entity framework y trae metodos para crear la bd con entityframework
@@ -16,8 +14,8 @@ namespace Application_jobs.Context
         //set up las entidades para ser agregadas como tablas
         // pasar los nombres de los modelos o entidades a plural, es una convencion para entity framework
         public DbSet<Company> Company { get; set; }
-        public DbSet<ApplicationStatus>applicationStatuses { get; set; }
-        public DbSet<ApplicationJob> applicationJobs { get; set; }
+        public DbSet<ApplicationStatus>ApplicationStatus { get; set; }
+        public DbSet<ApplicationJob> ApplicationJobs { get; set; }
 
         //Empezar con modelado de tablas
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -99,5 +97,6 @@ namespace Application_jobs.Context
 //-------------------- para mañana
 // En controllers poner el contexto en el constructor
 // crear los dtos ya que las entidades no se recomiendan colocar en los controllers ya que estan estan mostrando el estado de la bd
+// crear servicios y estos insertarlos en Program.cs
 
 

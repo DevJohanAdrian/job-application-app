@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore; // para conexion y set up de bd
-using Application_jobs.Context; // se trae para utilizar el contexto y configurar la conexion.
+using Application_jobs.Context;
+using Application_jobs.Services; // se trae para utilizar el contexto y configurar la conexion.
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -16,6 +17,8 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 );
 
 
+builder.Services.AddScoped<ApplicationStatusService>(); // Se agregar servicio de application status
+builder.Services.AddScoped<CompanyService>();
 
 var app = builder.Build();
 
