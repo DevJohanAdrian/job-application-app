@@ -31,6 +31,13 @@ namespace Application_jobs.Controllers
             return Ok(companyUpdated);
         }
 
+        [HttpPost]
+        [Route("SaveCompany")]
+        public async Task<ActionResult<CompanyDTO>> SaveCompany(CompanyDTO company) {
+            var companySaved = await _companyService.SaveCompany(company);
+            return Ok(companySaved);
+        }
+
 
 
         // old version

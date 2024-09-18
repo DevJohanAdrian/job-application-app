@@ -35,8 +35,18 @@ namespace Application_jobs.Services
                 Code = companyById.Code,
                 CompanyName = companyById.CompanyName,
             };
-
+            _context.Update(companyStorage);
+            await _context.SaveChangesAsync();
             return companyStorage;
         }
+
+        public async Task<string> SaveCompany(CompanyDTO company) { 
+            _context.Add(company);
+            await _context.SaveChangesAsync();
+            return "The company was saved succesfully.";
+        }
+
+
+
     }
 }
